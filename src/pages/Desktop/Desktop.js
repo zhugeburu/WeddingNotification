@@ -14,7 +14,7 @@ const bgImg = require('../../asset/images/photos/desktop-bg1.jpg');
 
 const phone = require('./images/phone.png');
 const wechat = require('./images/wechat.png');
-const didi = require('./images/ins.png');
+const didi = require('./images/care.png');
 const map = require('./images/map.png');
 
 const video = require('./images/video.png');
