@@ -69,7 +69,7 @@ export default class Integrated extends Component {
                     <div className="text-content">
                         <p>各位亲朋好友们：</p>
                         <p>诚挚地邀请您于2018年10月20日，星期六，18:00参加马威与蒋默晗的结婚典礼。</p>
-                        <p>婚宴地点：江苏省海安市年年有余大酒店</p>
+                        <p>婚宴地点：江苏省海安市华新年年有鱼大酒店</p>
                     </div>
                 </div>
             </div>
