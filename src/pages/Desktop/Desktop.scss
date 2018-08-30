@@ -1,0 +1,208 @@
+@import "../../asset/css/util";
+
+.desktop-page {
+  .bg {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .icon {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .top-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    .top-icon{
+      margin-left: 0.54rem;
+      width: 1.3rem;
+      height: 1.3rem;
+      display: inline-block;
+      margin-top: 0.48rem;
+    }
+    .data-icon{
+      margin-left: 0.54rem;
+      width: 1.3rem;
+      height: 1.3rem;
+      display: inline-block;
+      background: #fff;
+      border-radius: 0.3rem;
+      float: left;
+      margin-top: 0.48rem;
+      box-sizing: border-box;
+      padding-top: 0.16rem;
+      .day{
+        color: red;
+        text-align: center;
+        font-size: 0.3rem;
+        width: 100%;
+        position: relative;
+        display: inline-block;
+        top: -0.06rem;
+      }
+      .num{
+        color: #000;
+        font-size: 0.7rem;
+        font-weight: lighter;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        margin-top: -0.2rem;
+        font-family: PingFang SC;
+      }
+    }
+  }
+
+  .white-bottom {
+    z-index: 0;
+    height: 2.1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    .bottom-icon{
+      margin-left: 0.54rem;
+      width: 1.3rem;
+      height: 1.3rem;
+      display: inline-block;
+      margin-top: 0.42rem;
+    }
+    .bottom-hot-spot{
+      &:first-child{
+        .red-point {
+          right: -0.3rem;
+        }
+      }
+    }
+  }
+  .top-hot-spot {
+    position: absolute;
+    margin-left: 0.55rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+    div {
+      width: 100%;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      position: absolute;
+    }
+    .bottom-text {
+      font-size: 0.3rem;
+      font-family: PingFang SC;
+      top: 1.6rem;
+      color: #fff;
+    }
+  }
+
+  .bottom-hot-spot {
+    position: absolute;
+    margin-left: 0.54rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: inline-block;
+    margin-top: 0.42rem;
+  }
+
+  .red-point {
+    position: absolute;
+    right: -0.34rem;
+    top: -0.25rem;
+    z-index: 3;
+    width: 0.55rem;
+    height: 0.55rem;
+  }
+
+  /*红点动画 1*/
+  .red-point-animate-1 {
+    opacity: 0;
+    /*2个时间  动画播放时间  动画延时播放 播放次数 播放速度曲线 停留在最后一个动画*/
+    @include animation(red-point-animate-1 0.5s 1.5s 2 ease-in-out forwards);
+  }
+  @keyframes red-point-animate-1 {
+    0% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+    50% {
+      @include transform(scale(1.2));
+      opacity: 1;
+    }
+    100% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+  /*红点动画 2*/
+  .red-point-animate-2 {
+    /*2个时间  动画播放时间  动画延时播放 播放次数*/
+    @include animation(red-point-animate-2 0.3s 0.4s 3);
+  }
+  @keyframes red-point-animate-2 {
+    0% {
+      @include transform(rotate(0deg) scale(1.1))
+    }
+    25% {
+      @include transform(rotate(-20deg) scale(1.1))
+    }
+    50% {
+      @include transform(rotate(0deg) scale(1.1))
+    }
+    75% {
+      @include transform(rotate(20deg) scale(1.1))
+    }
+    100% {
+      @include transform(rotate(0deg) scale(1.1))
+    }
+  }
+
+  .video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    z-index: 5;
+    /*2个时间  动画播放时间  动画延时播放 播放次数 播放速度曲线 停留在最后一个动画*/
+    @include animation(video-animate 0.5s ease-in-out forwards);
+    .close {
+      width: 0.8rem;
+      position: absolute;
+      right: 0.1rem;
+      top: 0.1rem;
+      z-index: 3;
+    }
+    .back {
+      position: absolute;
+      z-index: 4;
+      padding: 0.33rem 0.5rem 0.4rem 0.24rem;
+      width: 0.4rem;
+      height: 0.4rem;
+    }
+    iframe {
+      position: absolute;
+      top: 50%;
+      margin-top: -4rem;
+      border: 0;
+      width: 100%;
+      height: 8.2rem;
+    }
+  }
+  @keyframes video-animate {
+    0% {
+      @include transform(scale(1));
+      opacity: 0;
+    }
+    100% {
+      @include transform(scale(1));
+      opacity: 1;
+    }
+  }
+}

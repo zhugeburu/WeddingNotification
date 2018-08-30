@@ -1,0 +1,153 @@
+@import "../../asset/css/util";
+
+.integrated-page {
+  .bg-img{
+    img{
+      height: inherit;
+    }
+  }
+  .bg {
+    background-color: rgba(0, 0, 0, 0.2);
+    .text-content {
+      background-color: rgba(1,1,1,0.17);
+      width: 100%;
+      position: absolute;
+      bottom: 0.7rem;
+      color: #2d282a;
+      box-sizing: border-box;
+      padding: .3rem .5rem;
+      text-indent: 2em;
+      font-size: 0.365rem;
+      p:first-child {
+        text-indent: 0;
+      }
+      p {
+        opacity: 0;
+        @include animation(inviteTextContent 1.5s 0.6s cubic-bezier(0.39, 0.66, 0.57, 1) 1 forwards);
+      }
+    }
+    @keyframes inviteTextContent {
+      0% {
+        opacity: 0;
+        @include transform(translate3d(0, 100%, 0));
+      }
+      100% {
+        opacity: 1;
+        @include transform(none)
+      }
+    }
+  }
+  .white-circle {
+    position: absolute;
+    height: 6rem;
+    width: 3.5rem;
+    transform: rotate(90deg);
+    top: 5.85rem;
+    left: 2rem;
+    -webkit-animation: whiteCircle 2s ease 1 both;
+    animation: whiteCircle 2s ease 1 both;
+  }
+
+  .item-1 {
+    left: 187px;
+    top: 365px;
+    img {
+      @include animation(itemImgAnimate 0.7s ease 1 both);
+    }
+    p {
+      @include animation(itemTitleAnimate 2s ease 1 both);
+    }
+  }
+  .item-2 {
+    left: 292px;
+    top: 538px;
+    img {
+      @include animation(itemImgAnimate 0.7s 0.5s ease 1 both);
+    }
+    p {
+      @include animation(itemTitleAnimate 2s 0.7s ease 1 both);
+    }
+  }
+  .item-3 {
+    left: 270px;
+    top: 737px;
+    img {
+      @include animation(itemImgAnimate 0.7s 1s ease 1 both);
+    }
+    p {
+      @include animation(itemTitleAnimate 2s 1.2s ease 1 both);
+    }
+  }
+  .integrated-back {
+  }
+  .integrated-item {
+    position: absolute;
+    width: 334px;
+    height: 134px;
+    img {
+      width: 134px;
+      height: 134px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include transform(scale(0));
+    }
+    p {
+      position: absolute;
+      font-family: FZKaTong;
+      color: white;
+    }
+    .p-title {
+      left: 136px;
+      font-size: 32px;
+      top: 21px;
+    }
+    .p-intro {
+      font-size: 26px;
+      left: 147px;
+      top: 65px;
+    }
+  }
+  @keyframes whiteCircle {
+    0% {
+      transform: rotate(90deg) translateX(625px);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(90deg) translateX(0px);
+      opacity: 0.6;
+    }
+  }
+  @keyframes itemImgAnimate {
+    0% {
+      @include transform(scale(0));
+    }
+    70% {
+      @include transform(scale(1.2));
+    }
+    90% {
+      @include transform(scale(0.9));
+    }
+    100% {
+      @include transform(scale(1));
+    }
+  }
+  @keyframes itemTitleAnimate {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes backAnimate {
+    0% {
+      @include transform(translate(625px) translate3d(0, 0, 0));
+      opacity: 0;
+    }
+    100% {
+      @include transform(translateX(0px) translate3d(0, 0, 0));
+      opacity: 0.6;
+    }
+  }
+}
