@@ -9,7 +9,7 @@ import  Back from 'components/Back/Back';
 
 const carImg = require('./images/hert.png');
 
-export default class Map extends Component {
+export default class Map extends Component { 
     constructor(props) {
         super(props);
         this.state = {};
@@ -20,7 +20,7 @@ export default class Map extends Component {
       var map = new AMap.Map('map',{
         resizeEnable: true,
         zoom: 13,
-        center: [120.4803609457,32.5278783490]
+        center: [120.473832,32.521536]
       });
 
       //设置DomLibrary，jQuery或者Zepto
@@ -54,7 +54,7 @@ export default class Map extends Component {
           iconTheme: 'fresh',
           iconStyle: 'pink',
           map: map,
-          position: [120.4803609457,32.5278783490]
+          position: [120.473832,32.521536]
         });
 
         new SimpleMarker({
